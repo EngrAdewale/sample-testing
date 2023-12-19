@@ -1,0 +1,210 @@
+How to introduce yourself as a DevOps Engineer like day-to-day activities?
+
+I am a DevOps Engineer with over five years of experience, I have gained extensive knowledge of various tech stacks. Before that, I worked as a Linux AdministratoDockermy current role, I am responsible for automation, ensuring top-notch code quality, and continuous monitoring and testing. 
+I am confident in optimizing business expansion through AWS Services, ranging from cost optimization to robust security measures. I have a solid background in Linux Commands and can expertly implement file management and networking processes. 
+
+I have successfully implemented the git workflow for proper collaboration, ensuring excellent code quality. Additionally, I have hands-on experience implementing an end-to-end continuous integration and delivery process using Jenkins. 
+
+Furthermore, I am proficient in writing Dockerfile, creating images, building images, running containers that package an application, and managing these application containers using Kubernetes.
+Another significant aspect of my expertise lies in implementing effective monitoring and alerting solutions using Prometheus and Grafana. This involves setting up dashboards, defining alerting rules, and ensuring the health and performance of the infrastructure. This experience has allowed me to proactively identify and address potential issues, contributing to system reliability.
+
+In addition to my monitoring proficiency, I have automation skills. I have developed automation scripts using both Bash and Python, streamlining routine tasks and enhancing operational efficiency. These scripting capabilities have proven instrumental in achieving seamless workflows and reducing manual intervention in day-to-day operations.
+
+GIT INTERVIEW QUESTIONS AND ANSWERS
+1.	What is the git workflow you use in your organization?
+a.	git add && git commit –m && git push
+2.	How to pull code from Git Hub?
+a.	“git clone”
+i.	Meanwhile you can clone into your local using HTTPS or SSH; Note: to use SSH, you will have to add an SSH key to your GitHub repository by following the following steps below:
+1.	In the terminal use the command ssh-keygen –t rsa
+2.	Change the directory to the .ssh folder
+3.	Use the “cat id_rsa.pub” command to get the ssh key
+4.	Go to the settings in your GitHub and scroll down to SSH and the new key
+3.	What is the difference between git clone and git fork?
+a.	Fork is used to create a copy of the repository whereas clone is used to download specific repositories.
+4.	How do you create a repository from the CLI?
+a.	You can create a repository from the CLI using the command “git remote add origin https://github.com/username/repository.git”
+5.	How to create a new branch in Git Hub?
+a.	Use git “checkout –b “branch name”
+i.	Note; after doing the update in the new branch and validating, you have to merge to the main branch then you check out to the main branch and merge the update by using either of the following commands “git merge, git rebase or git cherry-pick”.
+1.	“git cherry-pick commit hash”; this can only work easily with a few updates
+2.	git merge “feature branch name”
+3.	git rebase –continue
+6.	what is the difference between Git Merge and Git Rebase?
+a.	Rebase shows the commit in a linear history version that is which commit occurs first before the other whereas  it's not like that in git merge
+7.	Is git a distributed or centralized version control system? What's the difference between them?
+a.	Git is a distributed version control system
+b.	A CVS has a client-server architecture and here server is the remote repository which has all the copies of the code whereas Distributed on the other hand, all the developers have the copy of the code.
+8.	What are the commands you use to commit changes into your remote repository?
+a.	git add
+b.	git commit –m “commit message”
+c.	git push origin
+9.	what is the difference between git fetch and git pull?
+a.	Fetch informs of the latest changes made to your remote repository but does not merge to your local repository but Pull does the same but merge
+10.	What is the difference between .git and .gitignore?
+a.	.git contains all the information about your repository whereas .gitignore is used to ignore some files you don’t want to push to remote. 
+11.	What are pre-commit hooks and post-commit hooks?	
+a.	Pre-commit hook is the script to be run automatically before commit and post is the script you designed to run after each commit.
+12.	What is webhook?
+a.	 This is a mechanism that is set to trigger build after any update from the repository
+13.	How to pull and push changes to git?
+a.	git pull and git push
+14.	What is git stash and talk about use cases?
+a.	Temporary saving of changes before committing so you can work on another branch
+15.	How to amend a commit in git?
+a.	git commit –amend –m 
+16.	You have made a commit that contains sensitive information and you want to remove it from the git repository. What is the best way to do this?
+a.	Use the “git filter-branch command”
+17.	How do you resolve conflicts in git?
+a.	Use git status to check the files that have conflict then open the file in the text editor to remove the conflict marker >>>>>>>>.======= and edit the file and make necessary changes once that is done, you can commit the changes.
+18.	What is the difference between git reset and git revert?
+a.	Git reset removes a commit from the current branch when it has not been pushed to the remote repository whereas git revert creates a new commit even if it has been pushed to the remote repository
+19.	What is the difference between Git and GitHub?
+a.	Git is a distributed version control system that helps to keep track of changes in source code over time whereas GitHub is a platform hosting for git repositories for collaboration.
+20.	What is git LFS(Large File Storage)?
+a.	This is an extension in git that manages large files like videos, audio, graphics etc.
+21.	You want to merge a branch into another branch in Git but want to preserve the commit history of both branches. What is the best way to do this?
+a.	First you checkout to the branch that you want to merge into and then use the “git merge –no-ff comm
+•	Linux Commands/Shell Scripting Questions
+o	Command to find empty files in a given directory? Find ./dir/ –empty or ls –l
+o	Commands you will use for configuring SSH connectivity between 2 machines and what files will be present in the .ssh folder? 
+	We have to have a  private key and public key and to generate that we use ssh-keygen
+	Cd ~/.ssh/ then you use ls to get the file in the SSH and then you find id_rsa  id_rsa.pub,  known_hosts,  known_hosts.old
+	Copy the ssh key ssh-copy-id file @ip of the M2 
+o	How to schedule a shell script in Unix machines? crontab –e the you provide the cron expression. For instance in min hr day month etc
+o	Command to get load average? Top command
+o	Need to identify IP addresses in log file and count of ip addresses in a log file? grep -E -o "([0-9]{1,3}[.]){3}[0-9]{1,3}" logfile | sort | uniq -c | sort –nr
+o	What is the command for checking the running process? how to get the PID of the process?
+	ps –eaf, to kill a particular process, we use kill pid
+o	Command to get whether a certain port is listed or not? netstat –tunlp
+o	How to identify the number of params that has been sent to shell script? Sh test,sh
+o	Command to delete empty line in a file? sed -i '/^$/d' filename
+o	What is exit status? echo $?
+o	Given a machine, how will you identify which machine it is? uname –a
+
+o	Git/Github Questions 
+What is git reset? Types of reset?
+	git reset is used to undo changes in your working directory and staging area
+	git reset HEAD~1 is used to delete commits for maybe correction
+	Git commit history can be checked using git log –oneline | head
+	We have hard and soft, mixed git reset
+o	How to delete the local branch and remote branch in git?
+	git branch –a is used to list branches
+	git checkout –b test to create and switch branch
+	git branch –D “branch name” to delete the branch
+•	Difference between git diff and git status?
+o	git diff is used to compare two commits while git status is to check which stage your file is in, either staging, working, or local directory area.
+•	What are hooks in git?
+o	Hooks are scripts that are triggered at specific points in the Git workflow
+•	What is the importance .git directory?
+o	Without it, you won't be able to run any git command
+o	It contains all the information and metadata that Git uses to manage the repository
+•	What are the branches, diff between remote and local branches?
+o	Branches allow you to work on different parts of your project simultaneously, isolate changes, and merge them back together when ready
+o	Key Differences:
+	Location:
+•	Local branches exist on your local machine.
+•	Remote branches exist on a remote repository.
+	Visibility:
+•	Local branches are private to your local repository.
+•	Remote branches are visible to collaborators who have access to the remote repository.
+	Modification:
+•	Local branches are easily created, modified, and deleted locally.
+•	Remote branches are typically updated by pushing changes from local branches.
+	Workflow:
+•	Local branches are where you make changes and experiment.
+•	Remote branches represent the state of the project as shared with others.
+•	
+•	
+•	What Branching strategy that you are familiar with?
+o	There are several branching strategies in Git, and the choice of strategy often depends on the size of the development team, the nature of the project, and the release cycle. Here are a few commonly used branching strategies:
+	Feature Branching:
+•	Description:
+•	Each new feature or task is developed in its own branch.
+•	Feature branches are created off the main development branch.
+•	Workflow:
+	Developers create a new branch for each feature.
+	After development and testing, the feature branch is merged back into the main branch.
+•	What is git squash?
+o	In Git, squashing refers to combining multiple commits into a single commit
+	git rebase -i | Head replace the n with the number of commits you want to squash
+•	
+•	What PR (Pull request) is? what's the importance of PR?
+o	It is a way for a developer to notify others about changes they have made in a feature branch; it’s a mechanism in a version control system to propose changes in a code base.
+•	Command to list all commits?
+o	git log: this command shows a detailed log of all commits, starting from the most recent.
+o	git log –oneline: If you want to see a more condensed version of the commit history, you can use the –oneline; This will show each commit as a single line, displaying only the commit hash and the first line of the commit message.
+22.	
+Ansible Interview Questions and Answers
+•	What is configuration management?
+•	Do you think Ansible is better than other configuration management tools? If yes, why?
+o	Yes, because it's agentless and passwordless
+•	Can you write an Ansible Playbook to install the httpd service and get it running?
+---
+- name: Install and Start Apache HTTP Server
+  hosts: your_target_servers # Replace with the target server or group of servers
+
+  tasks:
+    - name: Install Apache HTTP Server
+      become: true
+      package:
+        name: httpd
+        state: present
+
+    - name: Start Apache service
+      become: true
+      service:
+        name: httpd
+        state: started
+        enabled: true
+
+o	
+•	What is the difference between the Ansible ad-hoc command and the Ansible playbook?
+o	Ansible ad-hoc command is for quick tasks while ansible-playbook is for multiple complex tasks
+•	How do you group servers in Ansible, or configure numbers of VMs using Ansible?
+o	Using inventory file
+•	What is Ansible's role?
+o	Roles provide a convenient and modular way to organize tasks, variables, handlers, and other files related to a specific component of your infrastructure. Roles make it easier to reuse code, share configurations, and maintain a clean directory structure
+•	
+•	How has Ansible helped your organization?
+o	Faster Deployment of Applications: Ansible facilitates the deployment of applications in a consistent and repeatable manner. By automating the deployment process, organizations can reduce the time it takes to deliver new features or updates.
+•	What is the Ansible Dynamic Inventory?
+o	Ansible Dynamic Inventory is a feature in Ansible that allows the inventory of hosts (machines to be managed) to be generated or fetched dynamically at runtime.
+•	What is Ansible Tower and have you used it? If yes, why?
+o	No
+•	How do you manage the RBAC of users for Ansible Tower?
+o	It’s used to manage access to ansible tower
+•	What is ansible galaxy command?
+o	We use this to create a structure
+•	Explain the difference between delegate_to and local_action in ansible
+•	How can you manage sensitive data, such as passwords in Ansible playbooks?
+o	By using ansible vault, which provides a secure way to encrypt and decrypt sensitive information.
+	To create a new encrypted file: ansible-vault create filename.yml
+	To edit : ansible-vault edit filename.yml
+	Run the encrypted playbook: ansible-playbook - -ask-vault-pass pass filename.yml.
+
+
+Docker Interview Questions and Answers
+•	What is the difference between an Entry point and a CMD?
+o	Entry point parameter cannot change that is it can’t be overwritten but CMD can be configurable
+•	How Containers are different from virtual machines?
+o	Container virtualizes the OS level while the VM virtualizes the hardware layer
+o	Container shares the host OS kernel and isolates processes and file system while VM runs a full OS on top of a hypervisor
+o	Container is lightweight while VM is Heavier in terms of resources
+o	Container is highly portable
+•	What is docker lifecycle?
+o	User write Dockerfile with a set of instruction that defines the docker image
+o	Once that I will create image out of it by running docker build, Push the image to docker registry
+o	 and docker run to execute the container
+•	What is different docker component?
+o	Docker client: dockerbuild, docker pull, docker run
+o	Docker host: dockerdaemon(heart of docker)
+•	What is the differences between docker COPY and docker ADD?
+o	ADD copy files from URL file unlike COPY copy from host system into container
+•	What is the networking types in docker and what is the default?
+o	The default networking type is Bridge
+	Bridge: The default network mode in Docker. It creates a private network between the host and containers, allowing containers to communicate with each other and with the host system.
+	Overlay: This mode enables communication between containers across multiple Docker host machines, allowing containers to be connected to a single network even when they are running on different hosts
+	Host: This mode allows containers to share the host system's network stack, providing direct access to the host system's network
+	MacVlan: this mode allows a container to appear on the network as a physical host rather than as a container.
+
